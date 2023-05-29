@@ -1,4 +1,4 @@
-- clean: ['~']
+- clean: ["~"]
 
 - defaults:
     link:
@@ -7,3 +7,4 @@
 
 - link:
     ~/.dotly: os/linux/.dotly
+    ~/.config/qtile: os/linux/qtile
