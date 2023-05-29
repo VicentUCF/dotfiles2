@@ -10,6 +10,9 @@
     - $DOTFILES_PATH/shell/bash/themes
 
 - link:
+    ~/.gitattributes: git/.gitattributes
+    ~/.gitconfig: git/.gitconfig
+    ~/.gitignore_global: git/.gitignore_global
     ~/.bash_profile: shell/bash/.bash_profile
     ~/.bashrc: shell/bash/.bashrc
     ~/.zimrc: shell/zsh/.zimrc
