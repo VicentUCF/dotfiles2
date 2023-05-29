@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/snv zsh
 # Uncomment for debuf with `zprof`
 # zmodload zsh/zprof
 
@@ -27,7 +27,3 @@ prompt ${DOTLY_THEME:-codely}
 source "$DOTLY_PATH/shell/zsh/bindings/dot.zsh"
 source "$DOTLY_PATH/shell/zsh/bindings/reverse_search.zsh"
 source "$DOTFILES_PATH/shell/zsh/key-bindings.zsh"
-
-#Volta
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
