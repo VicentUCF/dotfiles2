@@ -1,13 +1,8 @@
 # Dotfiles & Configs
 
-![Qtile](.screenshots/qtile.png)
+**_Enlaces Rápidos_**
 
-***Idioma***
-- 🇪🇸 Español
-- [🇺🇸 English](https://github.com/antoniosarosi/dotfiles)
-
-***Enlaces Rápidos***
-- *Configs para los gestores de ventanas*
+- _Configs para los gestores de ventanas_
   - [Qtile](https://github.com/antoniosarosi/dotfiles/tree/master/.config/qtile/README.es.md)
   - [Spectrwm](https://github.com/antoniosarosi/dotfiles/tree/master/.config/spectrwm/README.es.md)
   - [Openbox](https://github.com/antoniosarosi/dotfiles/tree/master/.config/openbox/README.es.md)
@@ -66,9 +61,9 @@ Esta guía es una recopilación de todos los pasos necesarios para construir un
 entorno de escritorio a partir de una instalación limpia basada en Arch Linux.
 Voy a asumir que te manejas bien con sistemas operativos basados en Linux y sus
 líneas de comandos. Ya que estás leyendo esto, asumiré también que has visto
-algunos vídeos de "*tiling window managers*" en Youtube, porque ahí es donde
+algunos vídeos de "_tiling window managers_" en Youtube, porque ahí es donde
 empieza el sinfín. Puedes elegir el gestor de ventanas que quieras, pero aquí
-usaremos Qtile como primer "*tiling window manager*", dado que fue con el que
+usaremos Qtile como primer "_tiling window manager_", dado que fue con el que
 empecé yo. Esta guía es básicamente una descripción de cómo he construido mi
 entorno de escritorio desde 0.
 
@@ -111,7 +106,7 @@ Para tener privilegios de superusuario necesitamos sudo:
 pacman -S sudo
 ```
 
-Edita **/etc/sudoers** con *nano* o *vim* y descomenta la línea con "wheel":
+Edita **/etc/sudoers** con _nano_ o _vim_ y descomenta la línea con "wheel":
 
 ```bash
 ## Uncomment to allow members of group wheel to execute any command
@@ -146,7 +141,7 @@ nmcli device wifi connect TU_SSID password TU_CONTRASEÑA
 
 Échale un vistazo a
 [esta página](https://wiki.archlinux.org/index.php/NetworkManager#nmcli_examples)
-para otras opciones proporcionadas por *nmcli*. Lo último que tenemos que hacer
+para otras opciones proporcionadas por _nmcli_. Lo último que tenemos que hacer
 antes de pensar en entornos de escritorio es instalar
 **[Xorg](https://wiki.archlinux.org/index.php/Xorg)**:
 
@@ -160,11 +155,11 @@ Primero, necesitamos una forma de iniciar sesión y abrir programas como
 navegadores y terminales, así que empezaremos instalando
 **[lighdm](https://wiki.archlinux.org/index.php/LightDM)**
 y **[qtile](https://wiki.archlinux.org/index.php/Qtile)**.
-*lightdm* no funcionará si no instalamos también un
+_lightdm_ no funcionará si no instalamos también un
 **[greeter](https://wiki.archlinux.org/index.php/LightDM#Greeter)**.
 También necesitamos
 **[xterm](https://wiki.archlinux.org/index.php/Xterm)**
-porque esa es la terminal que *qtile* abre por defecto, hasta que lo cambiemos
+porque esa es la terminal que _qtile_ abre por defecto, hasta que lo cambiemos
 en el archivo de configuración. Para editar archivos de configuración
 necesitaremos también un editor de texto, puedes usar
 **[vscode](https://wiki.archlinux.org/index.php/Visual_Studio_Code)**
@@ -177,13 +172,14 @@ navegador.
 sudo pacman -S lightdm lightdm-gtk-greeter qtile xterm code firefox
 ```
 
-Activa el servicio de *lightdm* y reinicia el ordenador, deberías poder iniciar
-sesión en Qtile a través de *lightdm*.
+Activa el servicio de _lightdm_ y reinicia el ordenador, deberías poder iniciar
+sesión en Qtile a través de _lightdm_.
 
 ```bash
 sudo systemctl enable lightdm
 reboot
 ```
+
 # Configuración básica de Qtile
 
 Ahora que estás dentro de Qtile, deberías conocer algunos de los atajos de
@@ -200,7 +196,7 @@ teclado que vienen por defecto.
 | **mod + ctrl + q**   | cerrar sesión                       |
 
 Antes de hacer nada, si no tienes la distribución del teclado en inglés,
-deberías cambiarla usando *setxkbmap*. Abre *xterm* con **mod + enter**, y
+deberías cambiarla usando _setxkbmap_. Abre _xterm_ con **mod + enter**, y
 cambia la distribución a español:
 
 ```bash
@@ -212,7 +208,7 @@ esribir el comando anterior de nuevo. Consulta [esta sección](#xprofile) para
 hacer cambios permanentes o sigue el orden natural de esta guía si tienes
 tiempo suficiente.
 
-Por defecto, no hay menú, tienes que lanzar programas a través de *xterm*. En
+Por defecto, no hay menú, tienes que lanzar programas a través de _xterm_. En
 este punto puedes instalar otro emulador de terminal si lo prefieres:
 
 ```bash
@@ -226,7 +222,7 @@ Abre el archivo de configuración de Qtile:
 code ~/.config/qtile/config.py
 ```
 
-Al principio, después de los imports, encontrarás una lista llamada *keys*, que
+Al principio, después de los imports, encontrarás una lista llamada _keys_, que
 contiene la línea siguiente:
 
 ```python
@@ -256,7 +252,7 @@ Key([mod, 'shift'], "m", lazy.spawn("rofi -show")),
 
 Reinicia Qtile con **mod + control + r**. Deberías poder abrir el menú y el
 emulador de terminal usando los atajos de teclado que acabas de definir. Si has
-instalado *rofi*, puedes cambiar su tema:
+instalado _rofi_, puedes cambiar su tema:
 
 ```bash
 sudo pacman -S which
@@ -279,7 +275,7 @@ su sistema. Pero recuerda que los cambios que haremos no son permanentes,
 
 Lo primero es lo primero, tu pantalla se ve negra y vacía, así que probablemente
 quieras un fondo más bonito para no sentirte tan deprimido. Puedes abrir
-*firefox* usando *rofi* y descargar un fondo de pantalla. Después instala
+_firefox_ usando _rofi_ y descargar un fondo de pantalla. Después instala
 **[feh](https://wiki.archlinux.org/index.php/Feh)** o
 **[nitrogen](https://wiki.archlinux.org/index.php/Nitrogen)**
 y pon tu fondo:
@@ -318,13 +314,12 @@ sudo pacman -S pulseaudio pavucontrol
 
 En Arch,
 [pulseaudio está activado por defecto](https://wiki.archlinux.org/index.php/PulseAudio#Running),
-pero puede que tengas que reiniciar para que *pulseaudio* arranque. Después de
-reiniciar, abre *pavucontrol* usando *rofi*, activa el audio (porque está en
+pero puede que tengas que reiniciar para que _pulseaudio_ arranque. Después de
+reiniciar, abre _pavucontrol_ usando _rofi_, activa el audio (porque está en
 "mute") y debería estar todo correcto.
 
-Ahora puedes establecer atajos de teclado para *pulseaudio*, abre el archivo de
+Ahora puedes establecer atajos de teclado para _pulseaudio_, abre el archivo de
 configuración de Qtile y añade esto:
-
 
 ```python
 # Volumen
@@ -393,20 +388,20 @@ y demás necesitas una interfaz gráfica como
 sudo pacman -S arandr
 ```
 
-Ábrela con *rofi*, ordena las pantallas como quieras, y después puedes guardar
+Ábrela con _rofi_, ordena las pantallas como quieras, y después puedes guardar
 la disposición de las mismas, lo cual simplemente te dará un script con el
-comando exacto de *xrandr* que necesitas. Guarda ese script, pero todavía no
+comando exacto de _xrandr_ que necesitas. Guarda ese script, pero todavía no
 le des al botón de aplicar.
 
-Para un sistema con múltiples monitores deberías crear una instancia de *Screen*
+Para un sistema con múltiples monitores deberías crear una instancia de _Screen_
 por cada uno de ellos en la configuración de Qtile.
 
-Encontrarás una lista llamada *screens* en la configuración de Qtile que
+Encontrarás una lista llamada _screens_ en la configuración de Qtile que
 contiene solo un objeto inicializado con una barra en la parte de abajo.
 Dentro de esa barra puedes ver los widgets con los que viene por defecto.
 
 Añade tantas pantallas como necesites y copia-pega los widgets, más adelante
-podrás personalizarlos. Ahora puedes volver a *arandr*, darle click en "apply"
+podrás personalizarlos. Ahora puedes volver a _arandr_, darle click en "apply"
 y reiniciar el gestor de ventanats.
 
 Con esto tus monitores deberían funcionar.
@@ -417,7 +412,7 @@ Otra utilidad básica que podrías necesitar es montar de forma automática
 unidades de almacenamiento externas. Para ello uso
 **[udisks](https://wiki.archlinux.org/index.php/Udisks)**
 y **[udiskie](https://www.archlinux.org/packages/community/any/udiskie/)**.
-*udisks* es una dependencia de *udiskie*, así que solo instalaremos este
+_udisks_ es una dependencia de _udiskie_, así que solo instalaremos este
 último. Instala también el paquete
 **[ntfs-3g](https://wiki.archlinux.org/index.php/NTFS-3G)**
 para leer y escribir en discos NTFS:
@@ -428,7 +423,7 @@ sudo pacman -S udiskie ntfs-3g
 
 ## Redes
 
-Hemos configurado la red a través de *nmcli*, pero un programa gráfico es más
+Hemos configurado la red a través de _nmcli_, pero un programa gráfico es más
 cómodo. Yo uso
 **[nm-applet](https://wiki.archlinux.org/index.php/NetworkManager#nm-applet)**:
 
@@ -495,14 +490,14 @@ necesitamos un par de cosas. Primero instala
 sudo pacman -S xorg-xinit
 ```
 
-Ahora puedes usar *~/.xprofile* para lanzar programas antes de que se ejecute
+Ahora puedes usar _~/.xprofile_ para lanzar programas antes de que se ejecute
 el gestor de ventanas:
 
 ```bash
 touch ~/.xprofile
 ```
 
-Por ejemplo, si escribes esto en tu *~/.xprofile*:
+Por ejemplo, si escribes esto en tu _~/.xprofile_:
 
 ```bash
 xrandr --output eDP-1 --primary --mode 1920x1080 --pos 0x1080 --output HDMI-1 --mode 1920x1080 --pos 0x0 &
@@ -534,7 +529,7 @@ cd yay-git
 makepkg -si
 ```
 
-Con acceso al *Arch User Repository*, puedes instalar prácticamente
+Con acceso al _Arch User Repository_, puedes instalar prácticamente
 todo el software de este planeta que haya sido pensado para correr en Linux.
 
 ## Media Transfer Protocol
@@ -564,11 +559,11 @@ está pensado para usuarios de vim, usalo solo si sabes moverte en vim.
 
 ## Basura
 
-Si no quieres usar *rm* constantemente y arriesgarte a perder ficheros,
+Si no quieres usar _rm_ constantemente y arriesgarte a perder ficheros,
 necesitas un sistema de basura. Por suerte, es bastante sencillio de hacer
 [usando alguna de estas herramientas](https://wiki.archlinux.org/index.php/Trash_management#Trash_creation)
 como **[glib2](https://www.archlinux.org/packages/core/x86_64/glib2/)**,
-y para interfaces gráficas como *thunar* necesitas **[gvfs](https://www.archlinux.org/packages/extra/x86_64/gvfs/)**:
+y para interfaces gráficas como _thunar_ necesitas **[gvfs](https://www.archlinux.org/packages/extra/x86_64/gvfs/)**:
 
 ```bash
 sudo pacman -S glib2 gvfs
@@ -578,7 +573,7 @@ gio trash path/to/file
 gio trash --empty
 ```
 
-Con *thunar* puedes abrir la basura desde el panel izquierdo, pero desde la
+Con _thunar_ puedes abrir la basura desde el panel izquierdo, pero desde la
 línea de comandos puedes hacer:
 
 ```bash
@@ -588,12 +583,12 @@ ls ~/.local/share/Trash/files
 ## Tema de GTK
 
 El momento que has estado esperando ha llegado, finalmente vas a instalar un
-tema oscuro. Yo uso *Material Black Colors*, puedes descargar una versión
+tema oscuro. Yo uso _Material Black Colors_, puedes descargar una versión
 [aquí](https://www.gnome-look.org/p/1316887/), con sus respectivos iconos
 [aquí](https://www.pling.com/p/1333360/).
 
 Sugiero empezar con
-*Material-Black-Blueberry* y *Material-Black-Blueberry-Suru*. Puedes encontrar
+_Material-Black-Blueberry_ y _Material-Black-Blueberry-Suru_. Puedes encontrar
 otros temas para GTK
 [en esta página](https://www.gnome-look.org/browse/cat/135/).
 Una vez tengas descargados los temas, puedes hacer esto:
@@ -697,10 +692,10 @@ echo "export QT_STYLE_OVERRIDE=kvantum" >> ~/.profile
 
 ## Tema de lightdm
 
-También podemos cambiar el tema de *lightdm* para que mole más, ¿por qué no?
-Necesitamos otro *greeter* y algún tema, en concreto
+También podemos cambiar el tema de _lightdm_ para que mole más, ¿por qué no?
+Necesitamos otro _greeter_ y algún tema, en concreto
 **[lightdm-webkit2-greeter](https://www.archlinux.org/packages/community/x86_64/lightdm-webkit2-greeter/)**
-y  **[lightdm-webkit-theme-aether](https://aur.archlinux.org/packages/lightdm-webkit-theme-aether/)**:
+y **[lightdm-webkit-theme-aether](https://aur.archlinux.org/packages/lightdm-webkit-theme-aether/)**:
 
 ```bash
 sudo pacman -S lightdm-webkit2-greeter
@@ -743,7 +738,7 @@ sudo pacman -S geeqie
 ### Vídeo y audio
 
 Aquí sin duda el clásico
-[vlc](https://wiki.archlinux.org/index.php/VLC_media_player_(Espa%C3%B1ol))
+[vlc](<https://wiki.archlinux.org/index.php/VLC_media_player_(Espa%C3%B1ol)>)
 es lo que necesitamos:
 
 ```bash
@@ -754,12 +749,12 @@ sudo pacman -S vlc
 
 Con todo lo que has hecho hasta ahora ya tienes todas las herramientas para
 empezar a trastear con las configuraciones y hacer de tu entorno de escritorio,
-bueno, *tu* entorno de escritorio. Lo que recomiendo es empezar añadiendo
-atajaos de teclado para programas típicos como *firefox*, un editor de texto,
+bueno, _tu_ entorno de escritorio. Lo que recomiendo es empezar añadiendo
+atajaos de teclado para programas típicos como _firefox_, un editor de texto,
 explorador de archivos, etc.
 
 Una vez te sientas cómodo con Qtile, puedes instalar otros gestores de ventanas
-y tendrás más sesiones disponibles al iniciar sesión con *lightdm*.
+y tendrás más sesiones disponibles al iniciar sesión con _lightdm_.
 
 Aqui tienes una lista con las configuraciones de mis gestores de ventanas,
 cada uno tiene su documentación propia:
@@ -773,24 +768,28 @@ cada uno tiene su documentación propia:
 # Galería
 
 ## [Qtile](https://github.com/antoniosarosi/dotfiles/tree/master/.config/qtile)
+
 ![Qtile](.screenshots/qtile.png)
 
 ## [Spectrwm](https://github.com/antoniosarosi/dotfiles/tree/master/.config/spectrwm)
+
 ![Spectrwm](.screenshots/spectrwm.png)
 
 ## [Openbox](https://github.com/antoniosarosi/dotfiles/tree/master/.config/openbox)
+
 ![Openbox](.screenshots/openbox.png)
 
 ## [Xmonad](https://github.com/antoniosarosi/dotfiles/tree/master/.config/xmonad)
+
 ![Xmonad](.screenshots/xmonad.png)
 
 ## [Dwm](https://github.com/antoniosarosi/dwm)
+
 ![Dwm](.screenshots/dwm.png)
 
 # Atajos de teclado
 
 Estos son algunos atajos de teclado comunes a todos mis gestores de ventanas:
-
 
 ## Ventanas
 
@@ -819,9 +818,9 @@ lanzan:
 sudo pacman -S rofi thunar firefox alacritty redshift scrot
 ```
 
-Para configurar *rofi*,
+Para configurar _rofi_,
 [lee este README](https://github.com/antoniosarosi/dotfiles/tree/master/.config/rofi/README.es.md),
-y para *alacritty*, [este](https://github.com/antoniosarosi/dotfiles/tree/master/.config/alacritty/README.es.md).
+y para _alacritty_, [este](https://github.com/antoniosarosi/dotfiles/tree/master/.config/alacritty/README.es.md).
 
 ## Apps
 
@@ -843,17 +842,17 @@ y para *alacritty*, [este](https://github.com/antoniosarosi/dotfiles/tree/master
 | Software                                                                                            | Utilidad                                      |
 | --------------------------------------------------------------------------------------------------- | --------------------------------------------- |
 | **[networkmanager](https://wiki.archlinux.org/index.php/NetworkManager)**                           | Autoexplicativo                               |
-| **[network-manager-applet](https://wiki.archlinux.org/index.php/NetworkManager#nm-applet)**         | *NetworkManager* systray                      |
+| **[network-manager-applet](https://wiki.archlinux.org/index.php/NetworkManager#nm-applet)**         | _NetworkManager_ systray                      |
 | **[pulseaudio](https://wiki.archlinux.org/index.php/PulseAudio)**                                   | Autoexplicativo                               |
-| **[pavucontrol](https://www.archlinux.org/packages/extra/x86_64/pavucontrol/)**                     | *pulseaudio* GUI                              |
-| **[pamixer](https://www.archlinux.org/packages/community/x86_64/pamixer/)**                         | *pulseaudio* CLI                              |
+| **[pavucontrol](https://www.archlinux.org/packages/extra/x86_64/pavucontrol/)**                     | _pulseaudio_ GUI                              |
+| **[pamixer](https://www.archlinux.org/packages/community/x86_64/pamixer/)**                         | _pulseaudio_ CLI                              |
 | **[brightnessctl](https://www.archlinux.org/packages/community/x86_64/brightnessctl/)**             | Brillo para portátiles                        |
 | **[xinit](https://wiki.archlinux.org/index.php/Xinit)**                                             | Inicia programas antes del gestor de ventanas |
 | **[libnotify](https://wiki.archlinux.org/index.php/Desktop_notifications)**                         | Notificaciones de escritorio                  |
 | **[notification-daemon](https://www.archlinux.org/packages/community/x86_64/notification-daemon/)** | Autoexplicativo                               |
 | **[udiskie](https://www.archlinux.org/packages/community/any/udiskie/)**                            | Montar discos automáticamente                 |
 | **[ntfs-3g](https://wiki.archlinux.org/index.php/NTFS-3G)**                                         | Leer y escribir NTFS                          |
-| **[arandr](https://www.archlinux.org/packages/community/any/arandr/)**                              | GUI para *xrandr*                             |
+| **[arandr](https://www.archlinux.org/packages/community/any/arandr/)**                              | GUI para _xrandr_                             |
 | **[cbatticon](https://www.archlinux.org/packages/community/x86_64/cbatticon/)**                     | Systray para la batería                       |
 | **[volumeicon](https://www.archlinux.org/packages/community/x86_64/volumeicon/)**                   | Systray para el volumen                       |
 | **[glib2](https://www.archlinux.org/packages/core/x86_64/glib2/)**                                  | Basura                                        |
