@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTLY_PATH/scripts/core/_main.sh"
+
+##? Ejecuta el compilador de angular en la libreria modules
+##?
+##? Usage: 
+##?    modules
+docs::parse "$@"
+
+echo "Compilando libreria modules"
+
+
