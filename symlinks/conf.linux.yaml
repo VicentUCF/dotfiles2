@@ -8,3 +8,6 @@
 - link:
     ~/.dotly: os/linux/.dotly
     ~/.config/qtile: os/linux/qtile
+    ~/.config/alacritty: os/linux/alacritty
+    ~/.config/rofi: os/linux/rofi
+    ~/usr/share/rofi/themes/: os/linux/rofi/themes
