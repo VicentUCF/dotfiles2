@@ -27,3 +27,5 @@ prompt ${DOTLY_THEME:-codely}
 source "$DOTLY_PATH/shell/zsh/bindings/dot.zsh"
 source "$DOTLY_PATH/shell/zsh/bindings/reverse_search.zsh"
 source "$DOTFILES_PATH/shell/zsh/key-bindings.zsh"
+source "$DOTFILES_PATH/shell/zsh/autosuggestions/zsh-autosuggestions.zsh"
+source "$DOTFILES_PATH/shell/zsh/sudo/sudo.plugin.zsh"
