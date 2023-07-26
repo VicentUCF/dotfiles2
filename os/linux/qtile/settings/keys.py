@@ -30,6 +30,10 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     ([mod, "shift"], "j", lazy.layout.shuffle_down()),
     ([mod, "shift"], "k", lazy.layout.shuffle_up()),
 
+    # Move from diferents screens
+    ([mod], "Right", lazy.next_screen()),
+    ([mod], "Left", lazy.prev_screen()),
+
     # Toggle between different layouts as defined below
     ([mod], "Tab", lazy.next_layout()),
     ([mod, "shift"], "Tab", lazy.prev_layout()),
