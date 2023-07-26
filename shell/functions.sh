@@ -30,3 +30,14 @@ function import_apps(){
   cat "$DOTFILES_PATH/os/arch/yay/global_packages.txt" | xargs -I % yay -S %
   cat "$DOTFILES_PATH/os/arch/pacman/global_packages.txt" | xargs -I % sudo pacman -S --needed %
 }
+
+function import_private_functions() {
+  for file in "$DOTFILES_PATH/shell/private-functions/"*; do
+    function_name=$(basename "$file")
+    eval "$function_name() {
+      unset -f $function_name
+      source "$file"
+      $function_name \$@
+    }"
+  done
+}
