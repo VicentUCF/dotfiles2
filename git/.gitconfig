@@ -86,7 +86,7 @@
 	# Detect whitespace errors when applying a patch
 	whitespace = fix
 [commit]
-	gpgsign = true
+	gpgsign = false
 [tag]
 	gpgsign = true
 [gpg]
