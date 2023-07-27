@@ -9,6 +9,7 @@
 * Go to your dotfiles folder `cd $HOME/.dotfiles`
 * Install git submodules `git submodule update --init --recursive modules/dotly`
 * Install your dotfiles `DOTFILES_PATH="$HOME/.dotfiles" DOTLY_PATH="$DOTFILES_PATH/modules/dotly" "$DOTLY_PATH/bin/dot" self install`
+* En caso de error comprobar que existe el usuario vicent_ucf debido a que se usa en la ruta de los DOTFILES_PATH.
 * Restart your terminal
 * Import your packages `dot package import`
 
