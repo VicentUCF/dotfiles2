@@ -8,3 +8,6 @@ shell/zsh/.zim
 # Private Stuff
 /**/**/private-*
 /scripts/private
+
+os/linux/qtile/__pycache__
+os/linux/qtile/settings/__pycache__/
