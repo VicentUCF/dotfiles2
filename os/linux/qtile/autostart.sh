@@ -19,7 +19,9 @@ function run {
 #autorandr horizontal
 
 #2:16:9
-xrandr --output DisplayPort-0 --off --output DisplayPort-1 --off --output DisplayPort-2 --mode 2560x1440 --pos 1920x0 --rotate normal --output HDMI-A-0 --mode 1920x1080 --pos 0x0 --rotate normal
+#xrandr --output DisplayPort-0 --off --output DisplayPort-1 --off --output DisplayPort-2 --mode 2560x1440 --pos 1920x0 --rotate normal --output HDMI-A-0 --mode 1920x1080 --pos 0x0 --rotate normal
+
+xrandr --output VGA-1 --primary --mode 1920x1200 --pos 1280x0 --rotate normal --output HDMI-1 --mode 1280x1024 --pos 0x0 --rotate normal
 
 #Segona Pantalla Vertical
 #xrandr --output DisplayPort-0 --off --output DisplayPort-1 --off --output DisplayPort-2 --mode 2560x1440 --pos 1080x46 --rotate normal --output HDMI-A-0 --mode 1920x1080 --pos 0x0 --rotate right

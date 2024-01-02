@@ -29,3 +29,10 @@ source "$DOTLY_PATH/shell/zsh/bindings/reverse_search.zsh"
 source "$DOTFILES_PATH/shell/zsh/key-bindings.zsh"
 source "$DOTFILES_PATH/shell/zsh/autosuggestions/zsh-autosuggestions.zsh"
 source "$DOTFILES_PATH/shell/zsh/sudo/sudo.plugin.zsh"
+
+# bun completions
+[ -s "/home/vciscar/.bun/_bun" ] && source "/home/vciscar/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

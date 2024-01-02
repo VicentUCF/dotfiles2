@@ -10,6 +10,10 @@ source "$DOTLY_PATH/scripts/core/_main.sh"
 ##?    modules
 docs::parse "$@"
 
-echo "Compilando libreria modules"
+ng build kore-lib-commons && ng build kore-lib-services && ng build kore-lib-ui && ng build kore-lib-renderer && ng build kore-lib-components-commons && ng build kore-lib-widgets-collection && ng build kore-lib-provider-collection  && ng build kore-lib-appbase && ng build kore-lib-crosstab && ng build kore-lib-dataextractor && ng build kore-lib-mydashboard && ng build kore-brand-hyundai && ng build kore-lib-ereputation && ng build kore-lib-modules
 
+ng build kore-brand-bbva &
+ng build kore-brand-media &
+ng build kore-brand-audi &
+ng build kore-brand-tracking &
 

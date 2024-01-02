@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTLY_PATH/scripts/core/_main.sh"
+
+##? Ir a la carpeta del proyecto
+##?
+##? Usage: 
+##?  project <project>
+docs::parse "$@"
+
+# buscar en la carpeta de /home/vciscar/Documents/Projects el nombre del proyecto y abrirlo
+# si no existe, da un error
+# si existe, abrirlo con cd 
+
+$project=$1
