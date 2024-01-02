@@ -63,7 +63,7 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     ([mod, "shift"], "d", lazy.spawn("rofi -show")),
 
     # Browser
-    ([mod], "b", lazy.spawn("firefox")),
+    ([mod], "b", lazy.spawn("brave")),
 
     # File Explorer
     ([mod], "e", lazy.spawn("thunar")),
@@ -86,7 +86,7 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     ([mod], "space", lazy.widget["keyboardlayout"].next_keyboard()),
 
     #ChatGPT Config
-    ([mod], "c", lazy.spawn("firefox https://chat.openai.com")),
+    ([mod], "c", lazy.spawn("brave https://chat.openai.com")),
     # ------------ Hardware Configs ------------
 
     # Volume
